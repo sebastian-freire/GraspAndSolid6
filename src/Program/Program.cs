@@ -9,6 +9,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
+/*
+El patron adaptador permite que objetos de tipos incompatibles puedan colaborar entre ellos.
+En este caso se solicito que la clase Recipe pudiera usar CountdownTimer, pero la clase no tiene
+forma de crear una instancia de ese objeto. Para eso se crea la clase RecipeTimerClient.
+RecipeTimerClient es una inner class de recipe, lo que permite modificar atributos que sean privados
+en la clase recipe. 
+
+Gracias a esos 2 cambios se logro que la clase Recipe pueda hacer uso de CountdownTimer y 
+a su vez modificar el atributo privato Cooked a true, cuanto el timer se completaba.
+*/
+
 namespace Full_GRASP_And_SOLID
 {
     public class Program
